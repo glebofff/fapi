@@ -8,7 +8,7 @@ app = FastAPI()
 
 
 class RequestScopeMiddleware(BaseHTTPMiddleware):
-    operation_id: int = 1
+    operation_id: int = 0
     """
     Adds 'start_time' and 'operation_id' to request scope.
     """
