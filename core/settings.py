@@ -3,7 +3,7 @@ from pydantic import BaseSettings
 
 
 class Settings(BaseSettings):
-    db_url: str = 'postgresql+psycopg2:///fapi'
+    db_url: str = 'postgresql:///fapi'
     db_pool_size: int = 20
     db_pool_timeout: int = 50
 

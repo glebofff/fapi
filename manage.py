@@ -12,5 +12,13 @@ def run(port, host, debug):
     uvicorn.run('app:app', host=host, port=port, reload=debug)
 
 
+@cli.command()
+def upgrade():
+    from alembic.config import Config
+    from alembic import command
+    alembic_cfg = Config(f"{settings.BASE_DIR}/alembic.ini")
+    command.upgrade(alembic_cfg, "head")
+
+
 if __name__ == '__main__':
     cli()
